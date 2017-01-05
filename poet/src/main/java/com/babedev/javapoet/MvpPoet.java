@@ -15,7 +15,7 @@ import java.io.IOException;
 
 import javax.lang.model.element.Modifier;
 
-public class MvpPoet {
+class MvpPoet {
 
     private String packageName;
     private String featureName;
@@ -74,12 +74,12 @@ public class MvpPoet {
                 .addStatement("mView = view")
                 .build();
 
-        TypeSpec mvpView = TypeSpec.classBuilder(featureName + "Presenter")
+        TypeSpec mvpPresenter = TypeSpec.classBuilder(featureName + "Presenter")
                 .addMethod(attachView)
                 .addField(getViewType(), "mView", Modifier.PRIVATE)
                 .build();
 
-        JavaFile javaFile = JavaFile.builder(packageName + "." + featureName.toLowerCase(), mvpView)
+        JavaFile javaFile = JavaFile.builder(packageName + "." + featureName.toLowerCase(), mvpPresenter)
                 .build();
 
         File file = new File("app/src/main/java");
