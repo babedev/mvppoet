@@ -37,6 +37,7 @@ class MvpPoet {
                 .addModifiers(Modifier.PUBLIC)
                 .returns(void.class)
                 .addParameter(Bundle.class, "savedInstanceState")
+                .addStatement("super.onCreate(savedInstanceState)")
                 .addComment("TODO setContentView()")
                 .addStatement("mPresenter = new $T()", getPresenterType())
                 .addStatement("mPresenter.attachView(this)")

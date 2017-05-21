@@ -9,6 +9,7 @@ class Sample2Activity extends Activity implements Sample2View {
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
     // TODO setContentView()
     mPresenter = new Sample2Presenter();
     mPresenter.attachView(this);
